@@ -8,7 +8,7 @@ authMiddleware.use((req, res, next) => {
 
   if (token) {
     verify(token, process.env.JWT_SECRET, (err, decoded) => {
-      if (err) return res.json({ status: false, errors: 'Token inválida' });
+      if (err) return res.json({ status: false, errors: 'Token inválido' });
 
       req.user = decoded;
       next();
