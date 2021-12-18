@@ -6,10 +6,11 @@ const UserSchema = new Schema({
   password: { type: String },
   rol: { type: String, default: 'CLIENT' },
   state: { type: Boolean, default: true },
-  book_id: [
+  prestamos: [
     {
-      type: ObjectId,
-      ref: 'Book'
+      book_id: {type: ObjectId, ref: 'Book'},
+      dateInit: Date,
+      dateFinish: Date,
     },
   ],
 });
